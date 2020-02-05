@@ -23,4 +23,6 @@ Route::get('/users', 'UsersController@index')->name('users');
 
 Route::get('/skills', 'SkillsController@index')->name('skills');
 
-Route::post('/skills', 'SkillsController@destroy')->name('skills');
+Route::get('/skills/{id}/{i}', 'SkillsController@destroy')->name('skills');
+
+Route::get('/skills', 'SkillsController@edit')->name('skills');
