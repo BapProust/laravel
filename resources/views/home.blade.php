@@ -16,6 +16,11 @@
 
                     You are logged in!
                 </div>
+<<<<<<< HEAD
+				@if (Auth::user()->isAdmin == 1)
+				@endif
+=======
+>>>>>>> c2af7ff6f054ad1817d04834acc38ee423674011
 			
             <a  class="btn btn-secondary" href="{{ url('/users')}}">Voir ton user</a>
 			</br>

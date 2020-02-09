@@ -37,8 +37,10 @@ class SkillsController extends Controller
 		return Redirect::back();
 	}
 	
-	public function edit($id, $i, Request $request)
+	public function edit($id, Request $request)
 	{
-		DB::table('skill_user')->where('user_id', $user->id)->where('skill_id', $i)
+		return $request->skillLevel;
+		
+		//DB::table('skill_user')->where('user_id', $id);
 	}
 }

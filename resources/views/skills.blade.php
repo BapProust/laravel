@@ -19,6 +19,41 @@
                     </div>
                     @endif
 
+<<<<<<< HEAD
+					@if (Auth::user()->isAdmin == 1)
+						@foreach ($user as $user)
+							<div class="card">
+								<div class="card-header">
+									<strong>Id : {{$user->id}}</strong></br>
+								</div>
+
+								<div class="card-body">
+									<strong>Prenom</strong> : {{$user->firstname}}</br>
+									<strong>Nom de famille</strong> : {{$user->lastname}}</br>
+									<strong>Email</strong> : {{$user->email}}</br>
+									@foreach($user->skills as $skill)
+										
+										<div class="card">
+											<div class="card-header">
+												<strong>Competence</strong> : {{$skill->name}}</br>
+											</div>
+											<div class="card-body">
+											<form method="post" action="{{url('/skills/' . $skill->id . '/')}}">
+											@csrf
+												<strong>Description</strong> : {{$skill->description}}</br>
+												<strong>Niveau</strong> : <input type='number' name='skillLevel' value='{{$skill->pivot->level}}'></input></br>
+												<a class="btn btn-danger" href="{{ url('/skills/'.$user->id.'/'.$skill->id.'/') }}">Supprimer</a>
+												<input type='submit' class="btn btn-info" value="Editer"></input>
+											</form>
+											</div>
+										</div>
+									@endforeach
+									<button class='btn btn-success'>Ajouter une compétence</button>
+								</div>
+							</div>
+						@endforeach
+					@endif
+=======
                     @foreach ($user as $user)
 						<div class="card">
 							<div class="card-header">
@@ -54,6 +89,7 @@
 							</div>
 						</div>
 					@endforeach
+>>>>>>> c2af7ff6f054ad1817d04834acc38ee423674011
                 </div>        
             </div>
 		</div>

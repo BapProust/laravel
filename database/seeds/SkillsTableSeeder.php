@@ -13,9 +13,9 @@ class SkillsTableSeeder extends Seeder
     public function run()
     {
 	$data = array([
-		'name'=>'JavaScript',
-		'description'=>'Langage de script Javascript',
-		'logo'=>'js.png',
+		'name'=>'Python',
+		'description'=>'Langage de script Python',
+		'logo'=>'python.png',
 	], 
 	[
 		'name'=>'HTML/CSS',

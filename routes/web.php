@@ -25,4 +25,8 @@ Route::get('/skills', 'SkillsController@index')->name('skills');
 
 Route::get('/skills/{id}/{i}', 'SkillsController@destroy')->name('skills');
 
+<<<<<<< HEAD
+Route::post('/skills/{id}', 'SkillsController@edit')->name('skills');
+=======
 Route::get('/skills', 'SkillsController@edit')->name('skills');
+>>>>>>> c2af7ff6f054ad1817d04834acc38ee423674011
