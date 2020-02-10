@@ -31,16 +31,21 @@ class SkillsController extends Controller
         return view('skills', compact('user'));
 	}
 	
-	public function destroy($id, $i)
+	public function destroy($id, $id_comp)
 	{
-		DB::table('skill_user')->where('user_id', $id)->where('skill_id', $i)->delete();
+		DB::table('skill_user')->where('user_id', $id)->where('skill_id', $id_comp)->delete();
 		return Redirect::back();
 	}
 	
-	public function edit($id, Request $request)
+	public function edit($id, $id_comp, Request $request)
 	{
-		return $request->skillLevel;
-		
-		//DB::table('skill_user')->where('user_id', $id);
+		DB::table('skill_user')->where('user_id', $id)->where('skill_id', $id_comp)->update(['level' => $request->skillLevel]);
+		return Redirect::back();
+	}
+	
+	public function deleteUser($id)
+	{
+		DB:table('user')->where('user_id', $id)->delete();
+		return Redirect::back();
 	}
 }
