@@ -21,6 +21,8 @@
 			@if (Auth::user()->isAdmin == 1)
 				</br>
 				<a  class="btn btn-secondary" href="{{ url('/skills')}}">Voir tous les users</a>
+				<br>
+				<a class="btn btn-secondary" href="{{ url('/skillPage')}}">Voir tous les skills</a>
 			@endif
 		</div>
 		</div>

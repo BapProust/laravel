@@ -23,6 +23,8 @@ Route::get('/users', 'UsersController@index')->name('users');
 
 Route::get('/skills', 'SkillsController@index')->name('skills');
 
+Route::get('/skillPage', 'SkillPageController@index')->name('skillPage');
+
 Route::get('/skills/{id}', 'SkillsController@deleteUser')->name('skills');
 
 Route::get('/skills/{id}/{id_comp}', 'SkillsController@destroy')->name('skills');

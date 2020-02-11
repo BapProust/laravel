@@ -45,7 +45,7 @@ class SkillsController extends Controller
 	
 	public function deleteUser($id)
 	{
-		DB:table('user')->where('user_id', $id)->delete();
+		DB::table('users')->where('id', $id)->delete();
 		return Redirect::back();
 	}
 }

@@ -14,7 +14,7 @@
 			
 			<div class="card">
 				<div class="card-header">
-					<strong>{{$user->firstname}} {{$user->lastname}}</strong
+					<strong>{{$user->firstname}} {{$user->lastname}}</strong>
 				</div>
 
 				<div class="card-body">
