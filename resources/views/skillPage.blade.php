@@ -30,6 +30,7 @@
 					</div>
 					<br>
 				@endforeach
+
 				<button type="button" data-toggle="modal" data-target="#ajouter" class='btn btn-success'>Ajouter une compétence</button>
 				
 				<div class="modal" id="ajouter">
@@ -55,6 +56,8 @@
 					</div>
 				</div>
 								
+				<button class='btn btn-success'>Ajouter une compétence</button>
+				
 				@else
 					<div class="alert alert-danger" role="alert">
 						Alert : Administrator Access Only

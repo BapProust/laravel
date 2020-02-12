@@ -25,8 +25,11 @@ Route::get('/skills', 'SkillsController@index')->name('skills');
 
 Route::get('/skillPage', 'SkillPageController@index')->name('skillPage');
 
+<<<<<<< HEAD
 Route::post('/skillPage', 'SkillPageController@ajout')->name('skillPage');
 
+=======
+>>>>>>> 3ad840f9cd349de0c59669222af61d06d70045a7
 Route::get('/skills/{id}', 'SkillsController@deleteUser')->name('skills');
 
 Route::get('/skills/{id}/{id_comp}', 'SkillsController@destroy')->name('skills');
