@@ -11,7 +11,6 @@
 				{{ session('status') }}
 			</div>
 			@endif
-
 			@if (Auth::user()->isAdmin == 1)
 				@foreach ($user as $user)
 					<div class="card">
@@ -46,7 +45,37 @@
 									</div>
 								</div>
 							@endforeach
-							<button class='btn btn-success'>Ajouter une compétence</button>
+                                         
+							<button class="btn btn-success" data-toggle="modal" data-target="#ajouter">Ajouter une compétence</button>
+                                              
+              <div class="modal" id="ajouter">
+      					<div class="modal-dialog">
+      						<div class="modal-content">
+      							<div class="modal-header">
+      								<div class="modal-title">
+      									Ajout de compétence
+      								</div>
+      							</div>
+      							<form method="post" action="{{url('/skills/' . $user->id . '/')}}">
+      							@csrf
+      						
+      								<div class="modal-body">
+                        <p>Skill : <select name="skillName">
+                           @foreach($skills as $skill)
+                             <option value="{{$skill->id}}">{{$skill->name}}</option>
+                           @endforeach
+                           </select>
+                        </p><br>
+                        <p>Niveau : <input type="number" min="1" max="5" name="skillLvl" required></p>
+      								</div>
+      								<div class="modal-footer">
+      									<button type="submit" class="btn btn-primary">Ajouter</button>
+      								</div>
+      							</form>
+      						</div>
+      					</div>
+      				</div>
+   				        
 						</div>
 					</div>
 					<br>

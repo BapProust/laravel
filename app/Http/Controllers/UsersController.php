@@ -26,7 +26,7 @@ class UsersController extends Controller
     public function index()
     {
         $user = Auth::user();
-		$comp = Skill::all();
-        return view('users', compact('user', 'comp'));
+		$skills = Skill::all();
+        return view('users', compact('user', 'skills'));
     }
 }

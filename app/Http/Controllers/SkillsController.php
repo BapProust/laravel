@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Redirect;
 use App\User;
+use App\Skill;
+use App\SkillUser;
 
 class SkillsController extends Controller
 {
@@ -28,7 +30,9 @@ class SkillsController extends Controller
     public function index()
     {
         $user = User::all();
-        return view('skills', compact('user'));
+        
+        $skills = Skill::all();        
+        return view('skills', ['skills' => $skills, 'user' => $user]);
 	}
 	
 	public function destroy($id, $id_comp)
@@ -48,4 +52,10 @@ class SkillsController extends Controller
 		DB::table('users')->where('id', $id)->delete();
 		return Redirect::back();
 	}
+ 
+   public function ajout($id, Request $request)
+   {
+     DB::table('skill_user')->insert(['user_id' => $id, 'skill_id' => $request -> skillName, 'level' => $request -> skillLvl]);
+     return Redirect::back();
+   }
 }

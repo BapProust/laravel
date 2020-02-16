@@ -18,7 +18,7 @@
 						<div class="card-header">
 							<strong>{{$skill->name}}</strong>
 							<div style="float:right;display:inline-block">
-								<a style="color:red;text-decoration:underline" href="">Supprimer</a>
+								<a style="color:red;text-decoration:underline" href="{{ url('/skillPage/' . $skill->id . '/')}}">Supprimer</a>
 							</div>
 						</div>
 
@@ -30,7 +30,6 @@
 					</div>
 					<br>
 				@endforeach
-
 				<button type="button" data-toggle="modal" data-target="#ajouter" class='btn btn-success'>Ajouter une compétence</button>
 				
 				<div class="modal" id="ajouter">
@@ -45,19 +44,17 @@
 							@csrf
 						
 								<div class="modal-body">
-									<input type="text" name="skillName">
-									<input type="text" name="skillDesc">
+                  <p>Nom du skill : <input type="text" name="skillName" required></p><br>
+                  <p>Description : <input type="text" name="skillDesc" required></p>
 								</div>
 								<div class="modal-footer">
-									<button type="submit" class="btn btn-primary" data-dismiss="modal">Ajouter</button>
+									<button type="submit" class="btn btn-primary">Ajouter</button>
 								</div>
 							</form>
 						</div>
 					</div>
 				</div>
 								
-				<button class='btn btn-success'>Ajouter une compétence</button>
-				
 				@else
 					<div class="alert alert-danger" role="alert">
 						Alert : Administrator Access Only

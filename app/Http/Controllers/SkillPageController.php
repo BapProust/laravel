@@ -31,10 +31,17 @@ class SkillPageController extends Controller
         return view('skillPage', compact('skill'));
 	}
 	
-	public function ajout()
+	public function ajout(Request $request)
 	{
-		return "Yay!";
+		    DB::table('skills')->insert(['name' => $request -> skillName, 'description' => $request -> skillDesc]);
+        return Redirect::back();
 	}
-	
+ 
+   public function delete($id)
+   {
+       DB::table('skills')->where('id', $id)->delete();
+       DB::table('skill_user')->where('skill_id', $id)->delete();
+       return Redirect::back();
+   }
 	
 }
